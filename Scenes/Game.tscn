@@ -1,0 +1,547 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Assets/Fonts/HarmonyOS_Sans_SC_Medium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/TextShrink.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Fonts/Font.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scenes/SwipeDetector.tscn" type="PackedScene" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.839216, 0.996078, 0.992157, 1 )
+shadow_color = Color( 0, 0, 0, 0.2 )
+shadow_size = 10
+shadow_offset = Vector2( 10, 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.509804, 0.854902, 0.862745, 0.901961 )
+shadow_color = Color( 0, 0, 0, 0.313726 )
+shadow_size = 3
+shadow_offset = Vector2( 3, 3 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.509804, 0.854902, 0.862745, 0.784314 )
+shadow_color = Color( 0, 0, 0, 0.2 )
+shadow_size = 3
+shadow_offset = Vector2( 3, 3 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.509804, 0.854902, 0.862745, 1 )
+shadow_color = Color( 0, 0, 0, 0.2 )
+shadow_size = 3
+shadow_offset = Vector2( 3, 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 60
+outline_size = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.243137, 0.8, 0.815686, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 15
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 30
+outline_size = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=13]
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Main/About:rect_size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 400, -0.25, 0, 0.25, 0, 382, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 0.8 )
+}
+
+[sub_resource type="Animation" id=14]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Main:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 34, -0.25, 0, 0.25, 0, 34, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Main:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 850, -0.25, 0, 0.25, 0, -5, -0.25, 0, 0.25, 0, 144, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6, 1 )
+}
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.431373, 0.878431, 0.878431, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Main" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -191.0
+margin_top = -256.0
+margin_right = 191.0
+margin_bottom = 256.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Control" parent="Main"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -171.0
+margin_top = -72.0
+margin_right = 167.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="ColorRect" parent="Main/Background"]
+margin_left = 10.0
+margin_top = -8.0
+margin_right = 70.0
+margin_bottom = 52.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="ColorRect" parent="Main/Background/1"]
+margin_left = 88.0
+margin_right = 148.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="ColorRect" parent="Main/Background/1"]
+margin_left = 176.0
+margin_right = 236.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="ColorRect" parent="Main/Background/1"]
+margin_left = 264.0
+margin_right = 324.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="ColorRect" parent="Main/Background"]
+margin_left = 10.0
+margin_top = 72.0
+margin_right = 70.0
+margin_bottom = 132.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="ColorRect" parent="Main/Background/2"]
+margin_left = 88.0
+margin_right = 148.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="ColorRect" parent="Main/Background/2"]
+margin_left = 176.0
+margin_right = 236.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="ColorRect" parent="Main/Background/2"]
+margin_left = 264.0
+margin_right = 324.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="ColorRect" parent="Main/Background"]
+margin_left = 10.0
+margin_top = 152.0
+margin_right = 70.0
+margin_bottom = 212.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="ColorRect" parent="Main/Background/3"]
+margin_left = 88.0
+margin_right = 148.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="ColorRect" parent="Main/Background/3"]
+margin_left = 176.0
+margin_right = 236.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="ColorRect" parent="Main/Background/3"]
+margin_left = 264.0
+margin_right = 324.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="ColorRect" parent="Main/Background"]
+margin_left = 10.0
+margin_top = 232.0
+margin_right = 70.0
+margin_bottom = 292.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="ColorRect" parent="Main/Background/4"]
+margin_left = 88.0
+margin_right = 148.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="ColorRect" parent="Main/Background/4"]
+margin_left = 176.0
+margin_right = 236.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="ColorRect" parent="Main/Background/4"]
+margin_left = 264.0
+margin_right = 324.0
+margin_bottom = 60.0
+color = Color( 0.803922, 0.960784, 0.956863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameBox" type="Control" parent="Main"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GamePosition" type="Control" parent="Main"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 30, 176 )
+
+[node name="1" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 118, 176 )
+
+[node name="2" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 206, 176 )
+
+[node name="3" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 294, 176 )
+
+[node name="4" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 30, 256 )
+
+[node name="5" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 118, 256 )
+
+[node name="6" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 206, 256 )
+
+[node name="7" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 294, 256 )
+
+[node name="8" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 30, 336 )
+
+[node name="9" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 118, 336 )
+
+[node name="10" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 206, 336 )
+
+[node name="11" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 294, 336 )
+
+[node name="12" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 30, 416 )
+
+[node name="13" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 118, 416 )
+
+[node name="14" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 206, 416 )
+
+[node name="15" type="Position2D" parent="Main/GamePosition"]
+position = Vector2( 294, 416 )
+
+[node name="Up" type="ColorRect" parent="Main"]
+anchor_right = 1.0
+margin_bottom = 152.0
+color = Color( 0.243137, 0.8, 0.815686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="ColorRect" parent="Main/Up"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -184.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = 82.0
+color = Color( 0.509804, 0.854902, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="Label" parent="Main/Up/Top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Top:0"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+font_size = 25
+rect_width = 174
+
+[node name="About" type="Button" parent="Main/Up"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -184.0
+margin_top = 20.0
+margin_right = -104.0
+margin_bottom = 62.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "关于"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Re" type="Button" parent="Main/Up"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = 20.0
+margin_right = -11.0
+margin_bottom = 62.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "重来"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="ColorRect" parent="Main/Up"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 10.0
+margin_top = -65.0
+margin_right = 190.0
+margin_bottom = 65.0
+color = Color( 0.509804, 0.854902, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreText" type="Label" parent="Main/Up/Score"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 7 )
+text = "0"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="About" type="Panel" parent="Main"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -382.0
+rect_clip_content = true
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Main/About"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+color = Color( 0.509804, 0.854902, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks" type="Label" parent="Main/About/Background"]
+anchor_right = 1.0
+margin_bottom = 81.0
+custom_fonts/font = SubResource( 9 )
+text = "感谢游玩"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="RichTextLabel" parent="Main/About/Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -152.0
+margin_right = 160.0
+margin_bottom = 184.0
+custom_fonts/normal_font = SubResource( 15 )
+text = "你好，我是bilipeaches。我很喜欢玩《2048清》，它与众多“2048“不同的是：没有任何广告和内购，这也写在它的简介里。于是我也想打造出一款属于自己的《2048清》，那么，就这样开始吧。本游戏采用Godot Engine进行开发，脚本语言为GDScript。游戏中仍有许多已知BUG未解决，我将在这块领域上继续探索。
+
+PS:如有任何问题，欢迎私信我或联系bilipeaches@outlook.com"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Version" type="Label" parent="Main/About/Background"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -33.0
+margin_right = -9.0
+margin_bottom = -9.0
+custom_fonts/font = SubResource( 11 )
+text = "Version:1.0.0"
+align = 2
+valign = 1
+
+[node name="AboutClose" type="Button" parent="Main/About"]
+margin_left = 311.0
+margin_top = 16.0
+margin_right = 367.0
+margin_bottom = 72.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 0.784314 )
+custom_fonts/font = SubResource( 12 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "╳"
+flat = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Start"
+anims/About = SubResource( 13 )
+anims/Start = SubResource( 14 )
+
+[node name="SwipeDetector" parent="." instance=ExtResource( 5 )]
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="pressed" from="Main/Up/About" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="Main/Up/Re" to="." method="_on_Re_pressed"]
+[connection signal="pressed" from="Main/About/AboutClose" to="." method="_on_AboutClose_pressed"]
+[connection signal="swipe_canceled" from="SwipeDetector" to="." method="_on_SwipeDetector_swipe_canceled"]
+[connection signal="swipe_finish" from="SwipeDetector" to="." method="_on_SwipeDetector_swipe_finish"]
